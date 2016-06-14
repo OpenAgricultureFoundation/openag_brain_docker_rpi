@@ -1,0 +1,17 @@
+version: "2"
+services:
+    brain:
+        image: openag/rpi_brain
+        expose:
+            - 5000
+        command: ~/catkin_ws/devel/env.sh rosrun openag_brain main -D http://db:5984 -H brain -f default
+        depends_on:
+            - db
+        restart: unless-stopped
+    db:
+        image: dogi/rpi-couchdb
+        expose:
+            - 5984
+        ports:
+            - 5984:5984
+        restart: unless-stopped
