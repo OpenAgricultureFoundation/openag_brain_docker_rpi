@@ -15,6 +15,12 @@ does this for you. It leverages a repository set up by
 
     sh install_docker.sh
 
-Now, the project can be run as follows:
+After installing `docker`, you may have to start a new terminal session in
+order to be able to contact the docker daemon
+
+Now, the project can be started as follows:
 
     docker-compose up -d
+
+2 Docker containers will be started in the background and will persist across
+reboots.
