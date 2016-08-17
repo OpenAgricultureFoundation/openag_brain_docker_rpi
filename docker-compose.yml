@@ -4,7 +4,9 @@ services:
         image: openag/rpi_brain
         expose:
             - 5000
-        command: ~/catkin_ws/devel/env.sh rosrun openag_brain main -D http://db:5984 -H brain -f default
+        devices:
+            - "/dev/ttyACM0:/dev/ttyACM0"
+        command: ~/catkin_ws/devel/env.sh rosrun openag_brain main -D http://db:5984 -A http://brain:5000 -f default --screen
         depends_on:
             - db
         restart: unless-stopped
