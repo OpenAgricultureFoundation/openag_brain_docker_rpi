@@ -36,7 +36,7 @@ Now, the project can be started as follows:
 2 Docker containers will be started in the background and will persist across
 reboots. (Note if you don't have your Arduino connected, you will see an error. If this happens, connect the Arduino and run the command again).
 
-## Developing
+## Working with Docker
 
 See which containers are running:
 
@@ -56,3 +56,25 @@ Stoping and starting the containers is done in the usual way:
 You can get logs for the containers via docker's logging command:
 
     docker logs -f openagbraindockerrpi_brain_1
+
+## Working with ROS Container
+
+OpenAg Brain is powered by [ROS](http://www.ros.org/). Sometimes, you might want to interact with ROS in the Docker container directly. To do so, first shell into the Docker container:
+
+    docker exec -it openagbraindockerrpi_brain_1 bash
+
+Then, activate the [catkin workspace](http://wiki.ros.org/catkin/Tutorials/using_a_workspace) within the Docker container:
+
+    source catkin_ws/devel/setup.bash
+
+Now, you can interact with ROS.
+
+To list available ROS topics:
+
+    rostopic list
+
+To log output from a ROS topic:
+
+    rostopic echo <topic name>
+
+To learn more about ROS, check out the [ROS wiki](http://wiki.ros.org/).
