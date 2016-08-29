@@ -8,13 +8,15 @@ Raspberry Pi.
 
 System requirements:
 
-- [Raspberry Pi 3](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/) with [Raspbian Jessie](https://www.raspberrypi.org/downloads/raspbian/) installed.
+- [Raspberry Pi 3](https://www.raspberrypi.org/products/raspberry-pi-3-model-b/)
+  or [Raspberry Pi 2 Model B](https://www.raspberrypi.org/products/raspberry-pi-2-model-b/)
+  with [Raspbian Jessie](https://www.raspberrypi.org/downloads/raspbian/) installed.
 - [Arduino Mega](https://www.arduino.cc/en/Main/ArduinoBoardMega)
 
 Before you start:
 
 - Plug your Arduino Mega into one of the Raspberry Pi's USB ports.
-- Connect via SSH, or open a terminal session to your Raspberry Pi. 
+- Connect via SSH, or open a terminal session to your Raspberry Pi.
 
 First, clone this repository on your Raspberry Pi:
 
@@ -27,14 +29,17 @@ does this for you. It leverages a repository set up by
 
     sh install_docker.sh
 
-After installing `docker`, you will have to refresh your user groups in order to contact the docker daemon. The easiest way to do this is to restart the Raspberry Pi (or if connected via SSH, log out and log back in).
+After installing `docker`, you will have to refresh your user groups in order
+to contact the docker daemon. The easiest way to do this is to restart the
+Raspberry Pi (or if connected via SSH, log out and log back in).
 
 Now, the project can be started as follows:
 
     docker-compose up -d
 
 2 Docker containers will be started in the background and will persist across
-reboots. (Note if you don't have your Arduino connected, you will see an error. If this happens, connect the Arduino and run the command again).
+reboots. (Note if you don't have your Arduino connected, you will see an error.
+If this happens, connect the Arduino and run the command again).
 
 ## Working with Docker
 
@@ -42,7 +47,8 @@ See which containers are running:
 
     docker ps
 
-The install script creates and runs 2 docker containers. You should see them listed when running `docker ps`:
+The install script creates and runs 2 docker containers. You should see them
+listed when running `docker ps`:
 
     openagbraindockerrpi_brain_1
     openagbraindockerrpi_db_1
@@ -59,11 +65,14 @@ You can get logs for the containers via docker's logging command:
 
 ## Working with ROS Container
 
-OpenAg Brain is powered by [ROS](http://www.ros.org/). Sometimes, you might want to interact with ROS in the Docker container directly. To do so, first shell into the Docker container:
+OpenAg Brain is powered by [ROS](http://www.ros.org/). Sometimes, you might
+want to interact with ROS in the Docker container directly. To do so, first
+shell into the Docker container:
 
     docker exec -it openagbraindockerrpi_brain_1 bash
 
-Then, activate the [catkin workspace](http://wiki.ros.org/catkin/Tutorials/using_a_workspace) within the Docker container:
+Then, activate the [catkin workspace](http://wiki.ros.org/catkin/Tutorials/using_a_workspace)
+within the Docker container:
 
     source catkin_ws/devel/setup.bash
 
