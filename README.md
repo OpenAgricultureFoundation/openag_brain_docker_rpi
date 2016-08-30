@@ -63,7 +63,7 @@ You can get logs for the containers via docker's logging command:
 
     docker logs -f openagbraindockerrpi_brain_1
 
-## Working with ROS Container
+## Working with the ROS Container
 
 OpenAg Brain is powered by [ROS](http://www.ros.org/). Sometimes, you might
 want to interact with ROS in the Docker container directly. To do so, first
@@ -87,3 +87,25 @@ To log output from a ROS topic:
     rostopic echo <topic name>
 
 To learn more about ROS, check out the [ROS wiki](http://wiki.ros.org/).
+
+## Re-flashing the Arduino firmware
+
+openag_brain monitors the firmware configuration in the database and will
+automatically re-flash the Arduino's firmware whenever it changes.
+
+When doing firmware development, an easy way to force a re-flash of the
+firmware is by bumping the revision number of anything in the
+`firmware_module` database. Navigate to:
+
+    http://<IP_ADDRESS>:5984/_utils/database.html?firmware_module
+
+Select a record, hit save. The firmware flashing routine will kick
+off automatically.
+
+If you need to "re-start the world", you can stop and restart the openag_brain
+docker container:
+
+    docker restart openagbraindockerrpi_brain_1
+
+**This will destroy the old database** and load configuration from the fixtures
+stored in the openag_brain image.
