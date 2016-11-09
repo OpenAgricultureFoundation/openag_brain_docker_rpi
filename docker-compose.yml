@@ -10,6 +10,11 @@ services:
         depends_on:
             - db
         restart: unless-stopped
+        logging:
+            driver: "json-file"
+            options:
+                max-size: "50m"
+                max-file: 5
     db:
         image: dogi/rpi-couchdb
         expose:
@@ -17,3 +22,8 @@ services:
         ports:
             - 5984:5984
         restart: unless-stopped
+        logging:
+            driver: "json-file"
+            options:
+                max-size: "50m"
+                max-file: 5
