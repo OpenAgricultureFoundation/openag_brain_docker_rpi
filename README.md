@@ -33,9 +33,19 @@ After installing `docker`, you will have to refresh your user groups in order
 to contact the docker daemon. The easiest way to do this is to restart the
 Raspberry Pi (or if connected via SSH, log out and log back in).
 
-Now, the project can be started as follows:
+## Running
 
-    docker-compose up -d
+Once installed, the project can be started by using the `docker-compose`
+command. There are 2 docker-compose files in this repository:
+
+- `docker-compose.yml` contains a base configuration. It doesn't do much, but
+  serves as a good template for creating compose files.
+- `personal_food_computer_v2.yml` contains a configuration for the [Personal
+  Food Computer](http://wiki.openag.media.mit.edu/food_computer_2).
+
+These can be used as follows:
+
+    docker-compose up -d -f personal_food_computer_v2.yml
 
 2 Docker containers will be started in the background and will persist across
 reboots. (Note if you don't have your Arduino connected, you will see an error.
