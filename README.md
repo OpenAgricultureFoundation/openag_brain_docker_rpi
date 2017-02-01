@@ -45,7 +45,7 @@ command. There are 2 docker-compose files in this repository:
 
 These can be used as follows:
 
-    docker-compose up -d -f personal_food_computer_v2.yml
+    docker-compose -f personal_food_computer_v2.yml up -d
 
 2 Docker containers will be started in the background and will persist across
 reboots. (Note if you don't have your Arduino connected, you will see an error.
