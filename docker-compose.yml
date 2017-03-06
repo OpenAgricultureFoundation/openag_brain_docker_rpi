@@ -1,3 +1,5 @@
+# Start Docker containers with configuration for Personal Food Computer V2.
+# See http://wiki.openag.media.mit.edu/food_computer_2
 version: "2"
 services:
     brain:
