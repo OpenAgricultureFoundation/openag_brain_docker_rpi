@@ -1,3 +1,5 @@
+# Start Docker containers with configuration for Personal Food Computer V2.
+# See http://wiki.openag.media.mit.edu/food_computer_2
 version: "2"
 services:
     brain:
@@ -6,7 +8,7 @@ services:
             - 5000
         devices:
             - "/dev/ttyACM0:/dev/ttyACM0"
-        command: ~/catkin_ws/devel/env.sh rosrun openag_brain main -D http://db:5984 -A http://brain:5000 -f default --screen
+        command: ~/catkin_ws/devel/env.sh rosrun openag_brain main personal_food_computer_v2.launch -D http://db:5984 -A http://brain:5000 --screen
         depends_on:
             - db
         restart: unless-stopped
