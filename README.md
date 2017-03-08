@@ -4,6 +4,39 @@ This repository provides a docker-compose configuration for running the
 [openag\_brain](http://github.com/OpenAgInitiative/openag_brain) project on a
 Raspberry Pi.
 
+## Demo branch instructions
+
+### Installing `openag_python`
+
+You'll need [openag_python](https://github.com/OpenAgInitiative/openag_python.git)
+to flash the Arduino with the firmware configuration. You can install it
+on the Arduino, or a laptop. Be sure to install it with the `[flash]` flag
+so you get all the microcontroller flashing tools.
+
+    git clone https://github.com/OpenAgInitiative/openag_python.git
+    cd openag_python
+    pip install -e .[flash]
+
+### Flashing the Arduino
+
+On the machine that you've installed `openag_python`, clone the firmware
+description files.
+
+    git clone http://github.com/openaginitiative/openag_launch -b demo
+
+Now that you've got the `demo` branch launch files, you can flash the Arduino
+with the demo firmware:
+
+    openag firmware flash -t upload -p ros -f ~/openag_launch/personal_food_computer_v2.yaml
+
+### Standing up the Docker containers
+
+In the `demo` branch of this repository, `docker-compose.yml` will point to the
+`openag/rpi_brain:demo` tag. To bring up the project, just:
+
+    cd ~/openag_brain_docker_rpi
+    docker-compose u
+
 ## Install
 
 System requirements:
