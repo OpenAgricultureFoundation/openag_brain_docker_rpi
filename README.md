@@ -35,7 +35,7 @@ In the `demo` branch of this repository, `docker-compose.yml` will point to the
 `openag/rpi_brain:demo` tag. To bring up the project, just:
 
     cd ~/openag_brain_docker_rpi
-    docker-compose u
+    docker-compose up -d
 
 ## Install
 
