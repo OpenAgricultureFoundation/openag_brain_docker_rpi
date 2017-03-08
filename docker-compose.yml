@@ -3,7 +3,7 @@
 version: "2"
 services:
     brain:
-        image: openag/rpi_brain
+        image: openag/rpi_brain:demo
         expose:
             - 5000
         devices:
