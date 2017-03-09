@@ -10,7 +10,7 @@ Raspberry Pi.
 
 You'll need [openag_python](https://github.com/OpenAgInitiative/openag_python.git)
 to flash the Arduino with the firmware configuration. You can install it
-on the Arduino, or a laptop. Be sure to install it with the `[flash]` flag
+on the Raspberry Pi, or a laptop. Be sure to install it with the `[flash]` flag
 so you get all the microcontroller flashing tools.
 
     git clone https://github.com/OpenAgInitiative/openag_python.git
