@@ -36,16 +36,10 @@ Raspberry Pi (or if connected via SSH, log out and log back in).
 ## Running
 
 Once installed, the project can be started by using the `docker-compose`
-command. There are 2 docker-compose files in this repository:
+command.
 
-- `docker-compose.yml` contains a base configuration. It doesn't do much, but
-  serves as a good template for creating compose files.
-- `personal_food_computer_v2.yml` contains a configuration for the [Personal
-  Food Computer](http://wiki.openag.media.mit.edu/food_computer_2).
-
-These can be used as follows:
-
-    docker-compose -f personal_food_computer_v2.yml up -d
+    cd openag_brain_docker_rpi
+    docker-compose up -d
 
 2 Docker containers will be started in the background and will persist across
 reboots. (Note if you don't have your Arduino connected, you will see an error.
