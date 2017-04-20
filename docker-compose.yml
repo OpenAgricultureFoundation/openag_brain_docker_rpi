@@ -22,6 +22,8 @@ services:
         image: dogi/rpi-couchdb
         expose:
             - 5984
+        volumes:
+            - /var/local/openag_db/:/usr/local/var/lib/couchdb/
         ports:
             - 5984:5984
         restart: unless-stopped
