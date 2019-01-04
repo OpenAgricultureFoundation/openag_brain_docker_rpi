@@ -1,4 +1,6 @@
-# openag\_brain\_docker\_rpi
+# DEPRECATED.
+
+## openag\_brain\_docker\_rpi
 
 This repository provides a docker-compose configuration for running the
 [openag\_brain](http://github.com/OpenAgInitiative/openag_brain) project on a
